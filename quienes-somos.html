@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quienes Somos - CHAOS COMPANY</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="icon" href="img/logo oscuro.jpg">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/recycling.css">
+    <link rel="icon" href="img/ChatGPT Image 1 oct 2025, 04_01_50 p.m..png">
+    
+    <style>
+        .custom-card {
+            border: none; 
+            /* Sombra principal de las tarjetas */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+        }
+        .custom-bg-lightgreen {
+            /* Color de fondo verde claro */
+            background-color: #d8f3da; 
+        }
+        .text-chaos-blue {
+            color: #007bff; /* Un azul estándar de Bootstrap para el contraste */
+        }
+        .chaos-logo-container {
+            background-color: #f7f7f7;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            /* Sombra para el contenedor del logo */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+        }
+
+        /* Estilos para Organigrama */
+        .org-chart-container {
+            /* Tarjeta principal del organigrama (color blanco en HTML) */
+            background-color: #fff; 
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+        }
+        
+        .org-chart {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .org-level {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .org-member {
+            transition: transform 0.3s ease, box-shadow 0.3s ease; 
+            padding: 15px; 
+            margin: 10px; 
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #eee; 
+            background-color: #ffffff; /* Aseguramos que los miembros sean blancos */
+            width: 180px; 
+        }
+        .org-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15); /* Sombra al pasar el ratón */
+        }
+        
+        /* Estilos para Video */
+        .video-container .ratio {
+             /* Aplicamos la sombra al contenedor del video */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden; 
+        }
+        /* Estilos para el botón de play (simulación de thumbnail) */
+        .video-thumbnail {
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            height: 100%;
+        }
+        .play-button {
+            border: none;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            border-radius: 50%;
+            padding: 20px 25px;
+            font-size: 1.5rem;
+            transition: background 0.3s;
+        }
+        .play-button:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top site-header">
+      <div class="container">
+        <a class="navbar-brand logo" href="index.html">
+          <img class="cabeza" src="img/ChatGPT Image 3 oct 2025, 12_53_05 p.m..png" alt="Logo Chaos Company">
+          <span class="brand">Chaos Company</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto main-nav">
+
+            <li class="nav-item"><a class="nav-link" href="quienes-somos.html">Quienes somos</a></li>
+            <li class="nav-item"><a class="nav-link" href="medio-ambiente.html">Medio ambiente</a></li>
+            <li class="nav-item"><a class="nav-link" href="Contactos.html">Contáctanos</a></li>
+            <li class="nav-item"><a class="nav-link" href="Educacion.html">Escaner</a></li>
+          </ul>
+          <div class="utils ms-3">
+            <button class="btn btn-donate" data-bs-toggle="modal" data-bs-target="#donationModal">
+              <i class="fas fa-heart"></i> Donar
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="py-5 custom-bg-lightgreen">
+        <div class="container my-5">
+            <div class="card custom-card p-4 p-md-5">
+                <div class="row align-items-center">
+
+                    <div class="col-lg-4 mb-4 mb-lg-0">
+                        <div class="chaos-logo-container">
+                            <img src="img/logoclaro.png" class="img-fluid" alt="Logo de CHAOS COMPANY" style="max-width: 150px; height: auto;">
+                            <h2 class="mt-3 text-chaos-blue">CHAOS</h2>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-8">
+                        <h1 class="display-5 fw-bold text-chaos-blue mb-4">
+                            <i class="fas fa-users me-2"></i> Sobre Nosotros
+                        </h1>
+
+                        <p style="font-size: 20px;" class="lead mb-4">
+                            CHAOS COMPANY es una organización dedicada a promover la conciencia ambiental y el reciclaje**. Nuestro equipo apasionado trabaja incansablemente para educar y motivar a las comunidades a adoptar prácticas sostenibles que protejan nuestro planeta para las futuras generaciones.
+                        </p>
+
+                        <h3 class="h4 mt-4 mb-3">Nuestra Misión (Acronym C.H.A.O.S.)</h3>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <strong class="text-success fs-5">C</strong>uidad el ambiente
+                            </li>
+                            <li class="list-group-item">
+                                <strong class="text-success fs-5">H</strong>acer lo correcto
+                            </li>
+                            <li class="list-group-item">
+                                <strong class="text-success fs-5">A</strong>tención a espacios públicos
+                            </li>
+                            <li class="list-group-item">
+                                <strong class="text-success fs-5">O</strong>rientados a un futuro sostenible
+                            </li>
+                            <li class="list-group-item">
+                                <strong class="text-success fs-5">S</strong>anar al planeta
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container my-5">
+        <h2 class="text-center mb-4"><i class="fas fa-users-cog"></i> Nuestro Equipo</h2>
+        
+        <div class="custom-card p-4 bg-white org-chart-container">
+            
+            <div class="org-chart">
+                <div class="org-member top">
+                    <img src="img/IMG_20251021_113920.jpg" alt="Director" class="rounded-circle">
+                    <h5>David Castiblanco</h5>
+                    <p>Director Ejecutivo</p>
+                </div>
+                <div class="org-level">
+                    <div class="org-member">
+                        <img src="img/IMG_20251021_113825.jpg" alt="Gerente" class="rounded-circle">
+                        <h5>Andres Ojeda</h5>
+                        <p>Gerente de Proyectos</p>
+                    </div>
+                    <div class="org-member">
+                        <img src="img/IMG_20251021_113900.jpg" alt="Coordinadora" class="rounded-circle">
+                        <h5>Andres Galvis</h5>
+                        <p>Coordinadora Ambiental</p>
+                    </div>
+                </div>
+                <div class="org-level">
+                    <div class="org-member">
+                        <img src="img/IMG_20251021_113815.jpg" alt="Especialista" class="rounded-circle">
+                        <h5>Dilan Rodríguez</h5>
+                        <p>Especialista en Reciclaje</p>
+                    </div>
+                    <div class="org-member"> 
+                        <img src="img/IMG_20251021_113845.jpg" alt="Comunicadora" class="rounded-circle">
+                        <h5>Santiago Coy</h5>
+                        <p>Comunicadora Digital</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <section class="py-5 custom-bg-lightgreen"> 
+        <div class="container my-5">
+            <h2 class="text-center mb-4"><i class="fas fa-history"></i> Nosotros</h2>
+            <div class="video-container position-relative">
+                <div class="ratio ratio-16x9  bg-white">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/WoT7hPWVfvo?si=X9q4iPBOvxCHs__D" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="d-flex align-items-center mb-3">
+                        
+                        <h4 class="mb-0">Chaos Company</h4>
+                    </div>
+                    <p class="text-light">Conciencia Ecologica y Ambienta</p>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-3">Enlaces Rápidos</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="#home">Inicio</a></li>
+                        <li><a href="#identification">Identificación de Materiales</a></li>
+                        <li><a href="#education">Educación sobre Reciclaje</a></li>
+                        <li><a href="#about">Sobre Nosotros</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-3">Recursos</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="#">Guía de Reciclaje</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Preguntas Frecuentes</a></li>
+                        <li><a href="#">Comunidad</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-3">Contáctanos</h5>
+                    <ul class="list-unstyled footer-contact">
+                        <li class="d-flex align-items-center mb-2">
+                            <a href="https://www.youtube.com/@theandreswwu/videos" class="text-white me-3 social-link"><i class="bi bi-youtube"></i></a>
+                            <a href="https://x.com/CHAOS_777_?t=3xqnc3635geahChL-fGJpA&s=09" class="text-white me-3 social-link"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.instagram.com/chaoscompany2025?igsh=MXhxcno1OXN2bGZ2NA==" class="text-white social-link"><i class="fab fa-instagram"></i></a>
+                        </li>
+                        
+                        <li class="d-flex align-items-center mb-2">
+                            <i class="fa-solid fa-phone me-2"></i>
+                            <span>+57 3124020283</span>
+                        </li>
+                        <li class="d-flex align-items-center">
+                            <i class="fa-solid fa-location-dot me-2"></i>
+                            <span>Calle 15 N° 5 – 32 Funza Cundinamarca</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-top border-secondary pt-4 mt-4 text-center text-light">
+                <p style="color: white;">Hecho con ❤️ para un futuro sostenible</p>
+                <p style="color: white;" class="mb-0">© 2025 Chaos Company</p>
+            </div>
+
+          <div class="border-top border-secondary pt-4 mt-4 text-center text-light">
+                <a href="#" class="text-white d-block footer-link" style="text-decoration: none;">Condiciones de Uso</a> 
+                <a href="#" class="text-white d-block footer-link" style="text-decoration: none;">Política de Privacidad</a>
+                <a href="#" class="text-white d-block footer-link" style="text-decoration: none;">Anuncios Basados en Tu Interés</a>
+          </div>
+
+        </div>
+    </footer>
+
+    <div class="modal fade" id="donationModal" tabindex="-1" aria-labelledby="donationModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="donationModalLabel"><i class="fas fa-hand-holding-heart"></i> Apoya Nuestra Causa</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>Tu donación nos ayuda a continuar nuestra misión de promover la conciencia ambiental. ¡Cada contribución cuenta!</p>
+            <div class="accordion" id="donationMethods">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="paypal-heading">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#paypal-collapse" aria-expanded="true" aria-controls="paypal-collapse">
+                    <i class="fab fa-paypal me-2"></i> PayPal
+                  </button>
+                </h2>
+                <div id="paypal-collapse" class="accordion-collapse collapse show" aria-labelledby="paypal-heading" data-bs-parent="#donationMethods">
+                  <div class="accordion-body">
+                    <p>Haz clic en el botón para donar de forma segura a través de PayPal.</p>
+                    <a href="https://paypal.me/Davidcastiblanco34" class="btn btn-primary"><i class="fab fa-paypal"></i> Donar con PayPal</a>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="qr-heading">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#qr-collapse" aria-expanded="false" aria-controls="qr-collapse">
+                    <i class="fas fa-qrcode me-2"></i> Código QR
+                  </button>
+                </h2>
+                <div id="qr-collapse" class="accordion-collapse collapse" aria-labelledby="qr-heading" data-bs-parent="#donationMethods">
+                  <div class="accordion-body text-center">
+                    <p>Escanea este código con tu app de pagos móviles.</p>
+                    <img src="img/QR.png" alt="Código QR para donación" class="img-fluid" style="max-width: 200px;">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('playButton').addEventListener('click', function() {
+            var iframe = document.getElementById('videoIframe');
+            var thumbnail = document.getElementById('videoThumbnail');
+            
+            // Muestra el iframe y oculta el thumbnail
+            iframe.style.display = 'block';
+            thumbnail.style.display = 'none';
+
+            // Inicia la reproducción automática (añadiendo &autoplay=1 al src)
+            var src = iframe.src;
+            if (src.indexOf('autoplay=1') === -1) {
+                iframe.src += (src.indexOf('?') > -1 ? '&' : '?') + 'autoplay=1';
+            }
+        });
+    </script>
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="icon" href="img/logo oscuro.jpg">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/recycling.css">
+    <link rel="icon" href="img/ChatGPT Image 1 oct 2025, 04_01_50 p.m..png">
+    <title>Escaner - CHAOS COMPANY</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top site-header">
+      <div class="container">
+        <a class="navbar-brand logo" href="index.html">
+          <img class="cabeza" src="img/ChatGPT Image 3 oct 2025, 12_53_05 p.m..png" alt="Logo Chaos Company">
+          <span class="brand">Chaos Company</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto main-nav">
+            <li class="nav-item"><a class="nav-link" href="quienes-somos.html">Quienes somos</a></li>
+            <li class="nav-item"><a class="nav-link" href="medio-ambiente.html">Medio ambiente</a></li>
+            <li class="nav-item"><a class="nav-link" href="Contactos.html">Contáctanos</a></li>
+            <li class="nav-item"><a class="nav-link" href="Educacion.html">Escaner</a></li>
+          </ul>
+          <div class="utils ms-3">
+            <button class="btn btn-donate" data-bs-toggle="modal" data-bs-target="#donationModal">
+              <i class="fas fa-heart"></i> Donar
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+<div class="container py-5">
+    <h1 class="mb-4 text-center"><i class="fas fa-robot"></i> Clasificador con Arduino</h1>
+
+    <div class="card shadow p-4 text-center">
+      <button type="button" class="btn btn-success mb-3" id="connectBtn">🔌 Conectar Arduino</button>
+      <button type="button" class="btn btn-primary mb-3" onclick="init()">🎥 Iniciar Cámara</button>
+
+      <div id="webcam-container" class="mb-3 d-flex justify-content-center"></div>
+      <div id="label-container" class="alert alert-info text-start"></div>
+    </div>
+  </div>
+
+    <!-- Donation Modal -->
+    <div class="modal fade" id="donationModal" tabindex="-1" aria-labelledby="donationModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="donationModalLabel"><i class="fas fa-hand-holding-heart"></i> Apoya Nuestra Causa</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>Tu donación nos ayuda a continuar nuestra misión de promover la conciencia ambiental. ¡Cada contribución cuenta!</p>
+            <div class="accordion" id="donationMethods">
+              <!-- PayPal -->
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="paypal-heading">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#paypal-collapse" aria-expanded="true" aria-controls="paypal-collapse">
+                    <i class="fab fa-paypal me-2"></i> PayPal
+                  </button>
+                </h2>
+                <div id="paypal-collapse" class="accordion-collapse collapse show" aria-labelledby="paypal-heading" data-bs-parent="#donationMethods">
+                  <div class="accordion-body">
+                    <p>Haz clic en el botón para donar de forma segura a través de PayPal.</p>
+                    <a href="https://paypal.me/Davidcastiblanco34" class="btn btn-primary"><i class="fab fa-paypal"></i> Donar con PayPal</a>
+                  </div>
+                </div>
+              </div>
+              <!-- QR Code -->
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="qr-heading">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#qr-collapse" aria-expanded="false" aria-controls="qr-collapse">
+                    <i class="fas fa-qrcode me-2"></i> Código QR
+                  </button>
+                </h2>
+                <div id="qr-collapse" class="accordion-collapse collapse" aria-labelledby="qr-heading" data-bs-parent="#donationMethods">
+                  <div class="accordion-body text-center">
+                    <p>Escanea este código con tu app de pagos móviles.</p>
+                    <img src="img/QR.png" alt="Código QR para donación" class="img-fluid" style="max-width: 200px;">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer -->
+<footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Column 1 - Logo -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="d-flex align-items-center mb-3">
+                       
+                        <h4 class="mb-0">Chaos Company</h4>
+                    </div>
+                    <p class="text-light">Conciencia Ecologica y Ambienta</p>
+                </div>
+                
+                <!-- Column 2 - Quick Links -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-3">Enlaces Rápidos</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="#home">Inicio</a></li>
+                        <li><a href="#identification">Identificación de Materiales</a></li>
+                        <li><a href="#education">Educación sobre Reciclaje</a></li>
+                        <li><a href="#about">Sobre Nosotros</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 3 - Resources -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-3">Recursos</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="#">Guía de Reciclaje</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Preguntas Frecuentes</a></li>
+                        <li><a href="#">Comunidad</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 4 - Contact -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-3">Contáctanos</h5>
+                    <ul class="list-unstyled footer-contact">
+                        <li class="d-flex align-items-center mb-2">
+                            <a href="https://www.youtube.com/@theandreswwu/videos" class="text-white me-3 social-link"><i class="bi bi-youtube"></i></i></a>
+                            <a href="https://x.com/CHAOS_777_?t=3xqnc3635geahChL-fGJpA&s=09" class="text-white me-3 social-link"><i class="fab fa-twitter"></i></a>
+                              <a href="https://www.instagram.com/chaoscompany2025?igsh=MXhxcno1OXN2bGZ2NA==" class="text-white social-link"><i class="fab fa-instagram"></i></a>
+                        </li>
+                        
+                        <li class="d-flex align-items-center mb-2">
+                            <i class="fa-solid fa-phone me-2"></i>
+                            <span>+57 3124020283</span>
+                        </li>
+                        <li class="d-flex align-items-center">
+                            <i class="fa-solid fa-location-dot me-2"></i>
+                            <span>Calle 15 N° 5 – 32 Funza Cundinamarca</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-top border-secondary pt-4 mt-4 text-center text-light">
+                <p style="color: white;">Hecho con ❤️ para un futuro sostenible</p>
+                <p style="color: white;" class="mb-0">© 2025 Chaos Company    </p>
+            </div>
+
+          <div class="border-top border-secondary pt-4 mt-4 text-center text-light">
+                 <a href="#" class="text-white d-block footer-link" style="text-decoration: none;">Condiciones de Uso</a> 
+                    <a href="#" class="text-white d-block footer-link" style="text-decoration: none;">Política de Privacidad</a>
+                    <a href="#" class="text-white d-block footer-link" style="text-decoration: none;">Anuncios Basados en Tu Interés</a>    
+            </div>
+
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+</body>
+ <script type="text/javascript">
+  const URL = "./my_model2/";
+  let model, webcam, labelContainer, maxPredictions;
+  let port, writer;
+  let lastClass = ""; // recordamos la última clase enviada
+
+  document.getElementById("connectBtn").addEventListener("click", async () => {
+    try {
+      port = await navigator.serial.requestPort();
+      await port.open({ baudRate: 9600 });
+      writer = port.writable.getWriter();
+      alert("✅ Conectado a Arduino");
+    } catch (err) {
+      alert("❌ Error al conectar: " + err);
+    }
+  });
+
+  async function init() {
+    const modelURL = URL + "model.json";
+    const metadataURL = URL + "metadata.json";
+
+    model = await tmImage.load(modelURL, metadataURL);
+    maxPredictions = model.getTotalClasses();
+
+    const flip = true;
+    webcam = new tmImage.Webcam(250, 250, flip);
+    await webcam.setup();
+    await webcam.play();
+    window.requestAnimationFrame(loop);
+
+    document.getElementById("webcam-container").appendChild(webcam.canvas);
+
+    labelContainer = document.getElementById("label-container");
+    labelContainer.innerHTML = "";
+  }
+
+  async function loop() {
+    webcam.update();
+    await predict();
+    window.requestAnimationFrame(loop);
+  }
+
+  async function predict() {
+    const prediction = await model.predict(webcam.canvas);
+    prediction.sort((a, b) => b.probability - a.probability);
+
+    const best = prediction[0];
+    labelContainer.innerHTML = `
+      <h5>Resultado</h5>
+      <p><strong>Clase:</strong> ${best.className}</p>
+      <p><strong>Confianza:</strong> ${(best.probability * 100).toFixed(1)}%</p>
+    `;
+
+    // ✅ Enviar solo si cambia de clase y la confianza es >90%
+    if (writer && best.probability > 0.6 && best.className !== lastClass) {
+      lastClass = best.className;
+      enviarArduino(best.className);
+    }
+  }
+
+  async function enviarArduino(clase) {
+    try {
+      const mensaje = clase.toLowerCase().trim() + "\n";
+      await writer.write(new TextEncoder().encode(mensaje));
+      console.log("📤 Enviado a Arduino:", mensaje);
+    } catch (err) {
+      console.error("Error al enviar:", err);
+    }
+  }
+</script>
+</html>
